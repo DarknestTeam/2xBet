@@ -14,5 +14,7 @@ namespace _2xBet.DAL.Entities
         public DbSet<Match> Matches { get; set; }
         public DbSet<Coefficent> Coefficentes { get; set; }
         public DbSet<Bet> Bets { get; set; }
+        public MainDbContext(string connectionString):base(connectionString)
+        { }
     }
 }
