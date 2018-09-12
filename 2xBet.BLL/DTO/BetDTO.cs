@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.BLL.DTO
 {
-    class BetDTO
+   public class BetDTO
     {
         public int Bet_Id { get; set; }
         public int MatchId { get; set; }

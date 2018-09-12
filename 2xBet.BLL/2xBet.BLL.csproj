@@ -63,13 +63,13 @@
     <Compile Include="Infrastructure\ValidationException.cs" />
     <Compile Include="Interfaces\ICardService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessModels\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2xBet.DAL\2xBet.DAL.csproj">

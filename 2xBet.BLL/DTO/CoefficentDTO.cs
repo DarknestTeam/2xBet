@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.BLL.DTO
 {
-    class CoefficentDTO
+ public   class CoefficentDTO
     {
         public string CommandCoeff_Id { get; set; }
         public string CoeffWin { get; set; }
