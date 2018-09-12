@@ -9,6 +9,11 @@ namespace _2xBet.BLL.Interfaces
 {
    public interface ICardService
     {
-        void AddCard(CardDTO card);
+        
+        CardDTO GetCard(int? id);
+        void DeleteCard(int? id);
+        void UpdateCard(CardDTO card);
+
+
     }
 }
