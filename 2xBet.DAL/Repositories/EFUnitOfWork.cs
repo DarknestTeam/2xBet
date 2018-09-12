@@ -16,56 +16,19 @@ namespace _2xBet.DAL.Repositories
         private CoefficentRepository coeffrepos;
         private MatchRepository matchrepos;
         private UserRepository userrepos;
+        
+        // Update
+        public  IRepository <Card> Cards => cardrepos= cardrepos == null? (cardrepos = new CardRepository(db)): (cardrepos);
+        public IRepository<Match> Matches => matchrepos = matchrepos == null ? (matchrepos= new MatchRepository(db)): (matchrepos);
+        public IRepository<User>  Users => userrepos =  userrepos == null ? (userrepos = new UserRepository(db)): (userrepos);
+        public IRepository<Coefficent>  Coefficents => coeffrepos = coeffrepos == null ?(coeffrepos = new CoefficentRepository(db)): (coeffrepos);
+        public IRepository<Bet> Bets => betrepos = betrepos ==  null ? (betrepos = new BetRepository(db)) : (betrepos);
 
         public EFUnitOfWork(string connectionString)
         {
             db = new MainDbContext(connectionString);
         }
-        public IRepository<Bet> Bets
-        {
-            get
-            {
-                if (betrepos == null)
-                    betrepos = new BetRepository(db);
-                return betrepos;
-            }
-        }
-        public IRepository<Card> Cards
-        {
-            get
-            {
-                if (cardrepos == null)
-                    cardrepos = new CardRepository(db);
-                return cardrepos;
-            }
-        }
-        public IRepository<Coefficent> Coefficents
-        {
-            get
-            {
-                if (coeffrepos == null)
-                   coeffrepos = new CoefficentRepository(db);
-                return coeffrepos;
-            }
-        }
-        public IRepository<Match> Matches
-        {
-            get
-            {
-                if (matchrepos == null)
-                    matchrepos = new MatchRepository(db);
-                return matchrepos;
-            }
-        }
-        public IRepository<User> Users
-        {
-            get
-            {
-                if (userrepos == null)
-                    userrepos = new UserRepository(db);
-                return userrepos;
-            }
-        }
+      
         public void Save()
         {
             db.SaveChanges();
