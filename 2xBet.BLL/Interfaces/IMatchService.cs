@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace _2xBet.BLL.Interfaces
 {
-   public interface ICardService
+  public  interface IMatchService
     {
-        void AddCard(CardDTO card);
-        void UpdateCard(CardDTO card);
-        CardDTO GetCard(int id);
-        void DeleteCard(int id);
+        void CreateMatch(MatchDTO match);
+        MatchDTO GetMatch(int id);
+        void DeleteMatch(int id);
+        void ChangeMatch(MatchDTO match);
 
     }
 }

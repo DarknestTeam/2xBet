@@ -64,6 +64,7 @@
     <Compile Include="Interfaces\IBetService.cs" />
     <Compile Include="Interfaces\ICardService.cs" />
     <Compile Include="Interfaces\ICoefficentService.cs" />
+    <Compile Include="Interfaces\IMatchService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
