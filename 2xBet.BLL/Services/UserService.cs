@@ -107,6 +107,7 @@ namespace _2xBet.BLL.Services
             }
             else
             {
+
                 user = new User
                 {
                     User_Id = userDTO.User_Id,

@@ -10,8 +10,8 @@ namespace _2xBet.BLL.Interfaces
   public  interface IMatchService
     {
         void CreateMatch(MatchDTO match);
-        MatchDTO GetMatch(int id);
-        void DeleteMatch(int id);
+        MatchDTO GetMatch(int? id);
+        void DeleteMatch(int? id);
         void ChangeMatch(MatchDTO match);
 
     }
