@@ -13,7 +13,7 @@ namespace _2xBet.BLL.Interfaces
         UserDTO Get(int? id);
         void UpdateUser(UserDTO user);
         void Delete(int? id);
-        void DepositAccount(UserDTO userDTO, int id);
+        void DepositAccount(int? id, float amount);
         void AddCard(CardDTO card);
     }
 }

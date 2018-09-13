@@ -22,6 +22,7 @@ namespace _2xBet.DAL.Entities
         [MinLength(6, ErrorMessage = "Не менее 6 символов")]
         [MaxLength(50, ErrorMessage = "Не более 50 символов")]
         public string Password { get; set; }
+        public float  Account { get; set; }
         public string CardId { get; set; }
         public Card Card { get; set; }
     }

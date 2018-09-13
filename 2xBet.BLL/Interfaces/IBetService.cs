@@ -9,9 +9,9 @@ namespace _2xBet.BLL.Interfaces
 {
     public  interface IBetService
     {
-        void CraeateBet(BetDTO betDTO);
-        void Delete(int Id);
-        BetDTO Get(int id);
+        void CreateBet(BetDTO betDTO);
+        void Delete(int? Id);
+        BetDTO Get(int? id);
         IEnumerable<BetDTO> Bets();
         void ChangeBet(BetDTO betDTO);
     }

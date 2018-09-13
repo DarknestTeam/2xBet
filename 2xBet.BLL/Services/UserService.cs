@@ -16,9 +16,19 @@ namespace _2xBet.BLL.Services
     public class UserService : IUserService
     {
         IUnitOfWork Db { get; set; }
-        public void AddCard(CardDTO card)
+        ICardService card { get; set; }
+        public UserService(IUnitOfWork uow,ICardService card)
         {
-            throw new NotImplementedException();
+            Db = uow;
+            this.card = card;
+
+        }
+       
+        public void AddCard(CardDTO cardDTO)
+        {
+
+            card.AddCard(cardDTO);
+
         }
 
         public void Delete(int? id)
@@ -36,23 +46,25 @@ namespace _2xBet.BLL.Services
             {
                 Db.Users.Delete(id);
             }
-
-
-
         }
 
-        public void DepositAccount(UserDTO userDTO, int id)
+        public void DepositAccount(int? id, float amount)
         {
+            User user = Db.Users.Get(id);
             if (id == null)
             {
                 throw new ValidationException("Не введене сумма ", "");
             }
-            else if ((Db.Users.Get(id)) == null)
+            else if(user == null)
             {
                 throw new ValidationException("Данный пользователь не найден", "");
             }
-            
+            user.Account += amount;
+            Db.Users.Update(user);
+            Db.Save();
+
         }
+
 
         public UserDTO Get(int? id)
         {
@@ -65,12 +77,13 @@ namespace _2xBet.BLL.Services
                 throw new ValidationException("Данный пользователь не найден", "");
             }
             else
-            {
+            {   /// тут  нежен мапер
                 UserDTO userDTO = new UserDTO();//=  new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>()).CreateMapper();
                 return userDTO;
                  
             }
         }
+
 
         public void MakeUser(UserDTO userDTO)
         {
@@ -85,12 +98,8 @@ namespace _2xBet.BLL.Services
                 Password = userDTO.Password,
                 Email = userDTO.Email,
                 Card = null,
-                CardId = null
-               
-            };
-
-             
-           
+                CardId = null     
+            };                      
         }
 
         public void UpdateUser(UserDTO userDTO)
@@ -102,7 +111,6 @@ namespace _2xBet.BLL.Services
             }
             else if (user == null)
             {
-
                 throw new ValidationException("Данный пользователь не найден", "");
             }
             else
