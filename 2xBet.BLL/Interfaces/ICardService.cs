@@ -11,8 +11,8 @@ namespace _2xBet.BLL.Interfaces
     {
         void AddCard(CardDTO card);
         void UpdateCard(CardDTO card);
-        CardDTO GetCard(int id);
-        void DeleteCard(int id);
-
+        CardDTO GetCard(int? id);
+        void DeleteCard(int? id);
+        
     }
 }
