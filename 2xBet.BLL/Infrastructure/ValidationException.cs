@@ -13,5 +13,9 @@ namespace _2xBet.BLL.Infrastructure
         {
             Property = prop;    
         }
+
+        public ValidationException(string message) : base(message)
+        {
+        }
     }
 }

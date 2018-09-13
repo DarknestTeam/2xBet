@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.DAL.Interfaces
 {
-    interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         IRepository<Bet>Bets { get; }
         IRepository<Card>Cards { get; }

@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace _2xBet.DAL.Interfaces
 {
-    interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
-        T Get(int id);
+             T Get(int? id);
       
             void Create(T item);
-            void Delete(int id);
+            void Delete(int? id);
             void Update(T item);
+       
     }
 }

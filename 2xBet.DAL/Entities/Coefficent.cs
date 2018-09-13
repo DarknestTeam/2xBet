@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.DAL.Entities
 {
-    class Coefficent
+     public class Coefficent
     {
         public string CommandCoeff_Id { get; set; }
         public string CoeffWin { get; set; }

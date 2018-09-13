@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\2xBet.BLL",
+    "\\2xBet.DAL",
+    "\\2xBet.DAL\\Repositories"
+  ],
+  "SelectedNode": "\\2xBet.DAL\\Repositories\\EFUnitOfWork.cs",
+  "PreviewInSolutionExplorer": false
+}

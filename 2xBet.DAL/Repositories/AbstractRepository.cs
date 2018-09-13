@@ -16,7 +16,7 @@ namespace _2xBet.DAL.Repositories
         {
             this.db = context;
         }
-        public T Get(int id)
+        public T Get(int? id)
         {
             return db.Set<T>().Find(id);
         }
@@ -36,7 +36,7 @@ namespace _2xBet.DAL.Repositories
         //{
         //    return db.Set<T>().Find()
         //}
-        public void Delete (int id)
+        public void Delete (int? id)
         {
             T t = db.Set<T>().Find(id);
             if (t != null)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.DAL.Entities
 {
-    class User
+     public class User
     {
         public int User_Id { get; set; }
         [Required]

@@ -1,3 +1,4 @@
+C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.csprojResolveAssemblyReference.cache
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.csproj.CoreCompileInputs.cache
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\bin\Debug\2xBet.DAL.dll.config
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\bin\Debug\2xBet.DAL.dll

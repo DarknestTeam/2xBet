@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.DAL.Repositories
 {
-    class EFUnitOfWork:IUnitOfWork
+     public class EFUnitOfWork:IUnitOfWork
     {
         private MainDbContext db;
         private BetRepository betrepos;

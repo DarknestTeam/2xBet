@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.DAL.Entities
 {
-    class Match
+    public class Match
     {
         public int Match_Id { get; set; }
         public bool IsLive { get; set; }

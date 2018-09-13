@@ -1,4 +1,6 @@
-﻿using Ninject.Modules;
+﻿using _2xBet.DAL.Interfaces;
+using _2xBet.DAL.Repositories;
+using Ninject.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
