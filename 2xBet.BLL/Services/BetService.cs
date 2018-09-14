@@ -118,5 +118,9 @@ namespace _2xBet.BLL.Services
                 return betDTO;
             }
         }
+        public void Dispose()
+        {
+            db.Dispose();
+        }
     }
 }

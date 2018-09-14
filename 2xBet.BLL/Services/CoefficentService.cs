@@ -68,5 +68,9 @@ namespace _2xBet.BLL.Services
                 return coefDTO;
             }
         }
+        public void Dispose()
+        {
+            db.Dispose();
+        }
     }
 }

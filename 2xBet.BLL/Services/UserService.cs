@@ -130,5 +130,9 @@ namespace _2xBet.BLL.Services
                 Db.Save();
             }
         }
+        public void Dispose()
+        {
+            Db.Dispose();
+        }
     }
 }
