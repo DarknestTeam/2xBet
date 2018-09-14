@@ -10,7 +10,7 @@ namespace _2xBet.BLL.Interfaces
     public interface ICoefficentService
     {
         void AddCoeff(CoefficentDTO coefficentDTO);
-        void ChangeCoefficent(int id);
-        CoefficentDTO GetCoeff(int id);
+        void ChangeCoefficent(CoefficentDTO coefficentDTO);
+        CoefficentDTO GetCoeff(int? id);
     }
 }

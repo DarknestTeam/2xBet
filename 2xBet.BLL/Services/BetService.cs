@@ -20,20 +20,12 @@ namespace _2xBet.BLL.Services
             db = uow;
         }
         public IEnumerable<BetDTO> Bets()
-        {
-            //if (id == null)
-            //{
-            //    throw new ValidationException("Не установлен Id пользователя", "");
-            //}
-            //else if ((Db.Users.Get(id)) == null)
-            //{
-            //    throw new ValidationException("Данный пользователь не найден", "");
-            //}
+        {   
+            
             Mapper.Initialize(cfg => cfg.CreateMap<Bet,BetDTO>());
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Bet, BetDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<Bet>, List<BetDTO>>(db.Bets.GetAll());
-
-          
+     
         }
 
         public void ChangeBet(BetDTO betDTO)
@@ -41,12 +33,12 @@ namespace _2xBet.BLL.Services
             Bet bet = db.Bets.Get(betDTO.Bet_Id);
             if (bet == null)
             {
-                throw new ValidationException("Данные о пльзователе отсутствуют", "");
+                throw new ValidationException("Данная ставка не найдена. Проверьте введённые данные", "");
             }
-            else if (bet == null)
-            {
-                throw new ValidationException("Данный пользователь не найден", "");
-            }
+            //else if (bet == null)
+            //{
+            //    throw new ValidationException("Данный пользователь не найден", "");
+            //}
             else
             {
                 bet = new Bet
@@ -55,7 +47,6 @@ namespace _2xBet.BLL.Services
                     Date = betDTO.Date,
                     Result = betDTO.Result,
                     Amount = betDTO.Amount
-
                 };
                 db.Bets.Update(bet);
                 db.Save();
@@ -67,21 +58,26 @@ namespace _2xBet.BLL.Services
            /// Bet bet = db.Bets.Get(betDTO.Bet_Id);
             if (betDTO == null)
             {
-                throw new ValidationException("Данные о пльзователе отсутствуют", "");
+                throw new ValidationException("Данные о ставке отсутствуют ", "");
             }
 
             else
             {
-               Bet bet = new Bet
-                {
-                    Bet_Id = betDTO.Bet_Id,
-                    Amount = betDTO.Amount,
-                    Choise = betDTO.Choise,
-                    Date = betDTO.Date,
-                    MatchId = betDTO.MatchId,
-                    Result = betDTO.Result,
-                    UserId = betDTO.UserId
-                };
+                //Bet bet = new Bet
+                // {
+                //     Bet_Id = betDTO.Bet_Id,
+                //     Amount = betDTO.Amount,
+                //     Choise = betDTO.Choise,
+                //     Date = betDTO.Date,
+                //     MatchId = betDTO.MatchId,
+                //     Result = betDTO.Result,
+                //     UserId = betDTO.UserId
+                // };
+                Mapper.Initialize(cfg => cfg.CreateMap<BetDTO, Bet>());
+                //var mapper = new MapperConfiguration(cfg => cfg.CreateMap<BetDTO,Bet>()).CreateMapper();
+                Bet bet = Mapper.Map<BetDTO, Bet>(betDTO);
+                db.Bets.Create(bet);
+
                 db.Save();
             }
 
@@ -91,11 +87,11 @@ namespace _2xBet.BLL.Services
         {
             if (Id == null)
             {
-                throw new ValidationException("Не установлен Id пользователя", "");
+                throw new ValidationException("Не установлен Id ставки", "");
             }
             else if ((db.Bets.Get(Id) == null))
             {
-                throw new ValidationException("Данный пользователь не найден", "");
+                throw new ValidationException("Данная ставка не найдена", "");
             }
             else
             {
@@ -106,20 +102,19 @@ namespace _2xBet.BLL.Services
 
         public BetDTO Get(int? id)
         {
-
-
             Bet bet = db.Bets.Get(id);
             if (id == null)
             {
-                throw new ValidationException("Не установлен Id пользователя", "");
+                throw new ValidationException("Не установлен Id ставки", "");
             }
             else if (bet == null)
             {
-                throw new ValidationException("Данный пользователь не найден", "");
+                throw new ValidationException("Данная ставка не найдена", "");
             }
             else
-            {// надо маппер
-                BetDTO betDTO = new BetDTO();
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<Bet, BetDTO>());
+                BetDTO betDTO = Mapper.Map<Bet, BetDTO>(bet);
                 return betDTO;
             }
         }

@@ -68,19 +68,21 @@ namespace _2xBet.BLL.Services
 
         public UserDTO Get(int? id)
         {
+
+            User user = Db.Users.Get(id);
             if (id == null)
             {
                 throw new ValidationException("Не установлен Id пользователя", "");
             }
-            else if ((Db.Users.Get(id)) == null)
+            else if (user == null)
             {
                 throw new ValidationException("Данный пользователь не найден", "");
             }
             else
-            {   /// тут  нежен мапер
-                UserDTO userDTO = new UserDTO();//=  new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>()).CreateMapper();
-                return userDTO;
-                 
+            { 
+                Mapper.Initialize(cfg => cfg.CreateMap<User, UserDTO>());
+                UserDTO userDTO = Mapper.Map<User, UserDTO>(user);
+                return userDTO;      
             }
         }
 
@@ -115,7 +117,6 @@ namespace _2xBet.BLL.Services
             }
             else
             {
-
                 user = new User
                 {
                     User_Id = userDTO.User_Id,

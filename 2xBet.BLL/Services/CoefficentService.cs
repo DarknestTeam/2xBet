@@ -2,6 +2,7 @@
 using _2xBet.BLL.Interfaces;
 using _2xBet.DAL.Entities;
 using _2xBet.DAL.Interfaces;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -40,12 +41,16 @@ namespace _2xBet.BLL.Services
             }
         }
 
-        public void ChangeCoefficent(int id)
+        public void ChangeCoefficent(CoefficentDTO coeffDTO)
         {
-            //  сделаю
+           Mapper.Initialize(cfg => cfg.CreateMap<CoefficentDTO, Coefficent>());
+           Coefficent coef= Mapper.Map<CoefficentDTO, Coefficent>(coeffDTO);
+            db.Coefficents.Update(coef);
+            db.Save();
+           
         }
 
-        public CoefficentDTO GetCoeff(int id)
+        public CoefficentDTO GetCoeff(int? id)
         {
             Coefficent coeff = db.Coefficents.Get(id);
             if (id == null)
@@ -57,8 +62,9 @@ namespace _2xBet.BLL.Services
                 throw new ValidationException("Данные  коэфициенты не найдены");
             }
             else
-            {// надо маппер
-                CoefficentDTO coefDTO = new CoefficentDTO();
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<User, UserDTO>());
+                CoefficentDTO coefDTO =  Mapper.Map<Coefficent,CoefficentDTO>(coeff);
                 return coefDTO;
             }
         }
