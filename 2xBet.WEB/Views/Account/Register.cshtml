@@ -1,0 +1,113 @@
+﻿@model _2xBet.WEB.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Регистрация";
+}
+
+@*<section class="modal modal-registration">
+    <h2 class="registration-title">Регистрация</h2>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "registration-form" }))
+    {
+        @Html.AntiForgeryToken();
+        <div class="registration-item-1">
+            добавить action для формы 
+            <p>
+                @Html.LabelFor(f=>f.)
+                <input class="surname-icon-user" id="user-surname" type="text" name="surname" placeholder="">
+            </p>
+            <p>
+                <label class="registration-field" for="user-first-name">Имя</label>
+                <input class="first-name-icon-user" id="user-first-name" type="text" name="first-name" placeholder="">
+            </p>
+            <p>
+                <label class="registration-field" for="user-patronymic">Отчество</label>
+                <input class="patronymic-icon-user" id="user-patronymic" type="text" name="patronymic" placeholder="">
+            </p>
+            <p>
+                <label class="registration-field" for="user-login">Логин</label>
+                <input class="login-icon-user" id="user-login" type="text" name="login" placeholder="">
+            </p>
+        </div>
+        <p class="birth-item">
+            <label class="registration-field" for="user-birth">Дата рождения</label>
+            <input class="birth-icon-user" id="user-birth" type="date" value="1985-06-01" name="birth" placeholder="">
+        </p>
+        <p>
+            <label class="registration-field" for="user-email">E-mail</label>
+            <input class="email-icon-user" id="user-email" type="email" name="e-mail" placeholder="name@example.com">
+        </p>
+        <div class="registration-item-2">
+            <p>
+                <label class="registration-field" for="user-country">Страна</label>
+                <select name="country-icon-user" id="user-country">
+                    <option value="BY">Беларусь</option>
+                    <option value="RU">Россия</option>
+                    <option value="AZ">Азербайджан</option>
+                    <option value="AM">Армения</option>
+                    <option value="KZ">Казахстан</option>
+                    <option value="KG">Киргизия</option>
+                    <option value="MD">Молдавия</option>
+                    <option value="TJ">Таджикистан</option>
+                    <option value="UZ">Узбекистан</option>
+                </select>
+            </p>
+            <p>
+                <label class="registration-field" for="user-city">Город</label>
+                <input class="city-icon-user" id="user-city" type="text" name="city" placeholder="">
+            </p>
+        </div>
+        <p>
+            <label class="registration-field" for="user-phone">Телефон</label>
+            <input class="phone-icon-user" id="user-phone" type="tel" value="+375" name="phone" placeholder="">
+        </p>
+        <div class="registration-item-2">
+            <p>
+                <label class="registration-field" for="user-document">Тип документа</label>
+                <select name="document-icon-user" id="user-document">
+                    <option value="">Паспорт</option>
+                    <option value="">Вид на жительство</option>
+                    <option value="">Удостоверение беженца</option>
+                </select>
+            </p>
+            <p>
+                <label class="registration-field" for="user-country-document">Страна, выдавшая документ</label>
+                <select name="country-document-icon-user" id="user-country-document">
+                    <option value="BY">Беларусь</option>
+                    <option value="RU">Россия</option>
+                    <option value="AZ">Азербайджан</option>
+                    <option value="AM">Армения</option>
+                    <option value="KZ">Казахстан</option>
+                    <option value="KG">Киргизия</option>
+                    <option value="MD">Молдавия</option>
+                    <option value="TJ">Таджикистан</option>
+                    <option value="UZ">Узбекистан</option>
+                </select>
+            </p>
+            <p>
+                <label class="registration-field" for="user-document-data">Дата выдачи</label>
+                <input class="document-data-icon-user" id="user-document-data" type="date" value="2015-04-04" name="document-data" placeholder="">
+            </p>
+            <p>
+                <label class="registration-field" for="user-number">Идентификационный номер</label>
+                <input class="number-icon-user" id="user-number" type="text" name="number" placeholder="AB5678567">
+            </p>
+            <p>
+                <label class="registration-field" for="user-password">Пароль</label>
+                <input class="password-icon-user" id="user-password" type="password" name="password" placeholder="********">
+            </p>
+            <p>
+                <label class="registration-field" for="user-password-repeat">Повторно пароль</label>
+                <input class="password-repeat-icon-user" id="user-password-repeat" type="password" name="password-repeat" placeholder="********">
+            </p>
+        </div>
+        <p class="registration-help">
+            <label class="registration-checkbox">
+                <input type="checkbox" name="age" class="visually-hidden">
+                <span class="checkbox-indicator"></span>
+                Мне больше 18 лет и я согласен с правилами проведения игр , опубликованными на этом сайте
+            </label>
+        </p>
+        <button class="button button-main registration-button" type="submit">Регистрация</button>
+    }
+    <button class="modal-close" type="button">Закрыть</button>
+    </section>*@

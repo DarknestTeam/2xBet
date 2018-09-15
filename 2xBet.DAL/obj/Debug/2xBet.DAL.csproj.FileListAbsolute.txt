@@ -9,3 +9,13 @@ C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.csp
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.csproj.CoreCompileInputs.cache
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.dll
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.pdb
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\2xBet.DAL.dll.config
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\2xBet.DAL.dll
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\2xBet.DAL.pdb
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.dll
+C:\Users\Артемон\source\repos\2xBet\2xBet.DAL\obj\Debug\2xBet.DAL.pdb

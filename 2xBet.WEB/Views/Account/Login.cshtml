@@ -1,0 +1,37 @@
+﻿@model _2xBet.WEB.Models.LoginViewModel
+@{ 
+    ViewBag.Title = "Личный кабинет";
+}
+<link href="@Url.Content("~/Content/Style.css")" rel="stylesheet" type="text/css" />
+<section class="modal modal-login">
+    <h2 class="login-title">Личный кабинет</h2>
+    @using (Html.BeginForm("Login", "Account",FormMethod.Post,new {@class= "login-form" }))
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <p>
+            @Html.LabelFor(l=>l.Login,new {@class = "visually-hidden",@for= "user-login" })
+           @*<label class="visually-hidden" for="user-login">Логин</label>*@
+            @Html.TextBoxFor(l=>l.Login,new { @class= "login-icon-use",@id= "user-login",@name="login",@placeholder="Логин" })
+            @*<input class="login-icon-user" id="user-login" type="text" name="login" placeholder="Логин">*@
+            @Html.ValidationMessageFor(l => l.Login, "", new { @class = "text-danger" })
+        </p>
+        <p>
+            @Html.LabelFor(p => p.Password, new { @class = "visually-hidden", @for = "user-password" })
+           @* <label class="visually-hidden" for="user-password">Пароль</label>*@
+            @Html.PasswordFor(p=>p.Password,new {@class = "login-icon-password",@id="user-password",@name="password",@placeholder="Пароль" })
+           @* <input class="login-icon-password" id="user-password" type="password" name="password" placeholder="Пароль">*@
+            </p>
+            <p class="login-help">
+                <label class="login-checkbox">
+                    <input type="checkbox" name="remember" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>
+                    Запомните меня
+                </label>
+                @*Ссылку на восстановление пароля или метод!*@
+                <a class="restore" href="#">Я забыл пароль!</a>
+            </p>
+            <button class="button button-main login-button" type="submit">Войти</button>
+        }
+        <button class="modal-close" type="button">Закрыть</button>
+    </section>
