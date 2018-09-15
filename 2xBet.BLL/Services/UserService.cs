@@ -28,7 +28,7 @@ namespace _2xBet.BLL.Services
         {
 
             card.AddCard(cardDTO);
-
+            
         }
 
         public void Delete(int? id)
@@ -45,6 +45,7 @@ namespace _2xBet.BLL.Services
             else
             {
                 Db.Users.Delete(id);
+                Db.Save();
             }
         }
 
@@ -101,7 +102,11 @@ namespace _2xBet.BLL.Services
                 Email = userDTO.Email,
                 Card = null,
                 CardId = null     
-            };                      
+            };
+
+            Db.Users.Update(user);
+            Db.Save();
+
         }
 
         public void UpdateUser(UserDTO userDTO)

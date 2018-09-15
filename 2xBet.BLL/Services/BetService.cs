@@ -77,7 +77,6 @@ namespace _2xBet.BLL.Services
                 //var mapper = new MapperConfiguration(cfg => cfg.CreateMap<BetDTO,Bet>()).CreateMapper();
                 Bet bet = Mapper.Map<BetDTO, Bet>(betDTO);
                 db.Bets.Create(bet);
-
                 db.Save();
             }
 
@@ -96,6 +95,7 @@ namespace _2xBet.BLL.Services
             else
             {
               db.Bets.Delete(Id);
+              db.Save();
             }
 
         }
