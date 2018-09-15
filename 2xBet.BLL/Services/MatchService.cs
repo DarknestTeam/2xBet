@@ -3,6 +3,7 @@ using _2xBet.BLL.Infrastructure;
 using _2xBet.BLL.Interfaces;
 using _2xBet.DAL.Entities;
 using _2xBet.DAL.Interfaces;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace _2xBet.BLL.Services
             db.Save();
 
         }
+     
         public MatchDTO GetMatch(int? id)
         {
             if (id == null)
@@ -50,7 +52,7 @@ namespace _2xBet.BLL.Services
             else if (db.Matches.Get(id.Value) == null)
                 throw new ValidationException("не найдена карточка", "");
             else
-                db.Matches.Delete(id);
+                db.Matches.Delete(id);  
         }
         public void ChangeMatch(MatchDTO matchDTO)
         {
@@ -69,6 +71,14 @@ namespace _2xBet.BLL.Services
             };
             db.Matches.Create(match);
             db.Save();
+        }
+        //!  Маппер всего
+        public IEnumerable<MatchDTO>  GetMatches()
+        {
+            Mapper.Initialize(cfg => cfg.CreateMap<Match, MatchDTO>());
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Match, MatchDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<Match>, List<MatchDTO>>(db.Matches.GetAll());
+          
         }
     }
 }
