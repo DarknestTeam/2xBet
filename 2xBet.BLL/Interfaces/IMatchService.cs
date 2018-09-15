@@ -13,6 +13,7 @@ namespace _2xBet.BLL.Interfaces
         MatchDTO GetMatch(int? id);
         void DeleteMatch(int? id);
         void ChangeMatch(MatchDTO match);
+        IEnumerable<MatchDTO> GetMatches();
 
     }
 }

@@ -3,6 +3,7 @@ using _2xBet.BLL.Infrastructure;
 using _2xBet.BLL.Interfaces;
 using _2xBet.DAL.Entities;
 using _2xBet.DAL.Interfaces;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,41 +21,30 @@ namespace _2xBet.BLL.Services
             db = unit;
         }
 
-        public void AddCard (CardDTO card)
+        public void AddCard (CardDTO cardDTO)
         {
-            if (card == null)
+            if (cardDTO == null)
             {
                 throw new ValidationException("пожалуйста заполните данные о карточке", "");
             }
-            Card creditcard = new Card
-            {
-                CardHolderName = card.CardHolderName,
-                CardId = card.CardId,
-                Code = card.Code,
-                NumberCard = card.Term,
-                Term = card.Term
-            };
-            db.Cards.Create(creditcard);
+            Mapper.Initialize(cfg => cfg.CreateMap<CardDTO,Card>());
+            Card card = Mapper.Map<CardDTO, Card>(cardDTO);
+            db.Cards.Create(card);
             db.Save();
         }
-        public void UpdateCard(CardDTO card)
+        public void UpdateCard(CardDTO cardDTO)
         {
-            Card creditcard = db.Cards.Get(card.CardId);
+            Card creditcard = db.Cards.Get(cardDTO.CardId);
             if(creditcard == null)
             {
                 throw new ValidationException("данная карточка не найдена или пуста", "");
             }
-            creditcard = new Card
-            {
-                CardHolderName = card.CardHolderName,
-                CardId = card.CardId,
-                Code = card.Code,
-                NumberCard = card.Term,
-                Term = card.Term
-            };
-            db.Cards.Create(creditcard);
+            Mapper.Initialize(cfg => cfg.CreateMap<Card,CardDTO>());
+            Card card = Mapper.Map<CardDTO,Card>(cardDTO);
+            db.Cards.Update(card);
             db.Save();
         }
+
         public CardDTO GetCard(int? id)
         {
             if (id == null)
@@ -62,8 +52,12 @@ namespace _2xBet.BLL.Services
             var card = db.Cards.Get(id.Value);
             if (card == null)
                 throw new ValidationException("карточка не найдена", "");
-            return new CardDTO { CardHolderName = card.CardHolderName, CardId = card.CardId, Code = card.Code, NumberCard = card.NumberCard, Term = card.Term };
+            Mapper.Initialize(cfg => cfg.CreateMap<Card,CardDTO>());
+            CardDTO cardDTO = Mapper.Map<Card, CardDTO>(card);
+            return cardDTO;
+            
         }
+
         public void DeleteCard(int? id)
         {
             if (id == null)
@@ -72,6 +66,10 @@ namespace _2xBet.BLL.Services
                 throw new ValidationException("не найдена карточка", "");
             else
                 db.Cards.Delete(id);
+        }
+        public void Dispose()
+        {
+            db.Dispose();
         }
     }
 }
