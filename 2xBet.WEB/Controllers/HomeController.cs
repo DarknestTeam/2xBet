@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2xBet.BLL.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,11 @@ namespace _2xBet.WEB.Controllers
 {
     public class HomeController : Controller
     {
+        IMatchService match;
+        public HomeController(IMatchService service)
+        {
+            match = service;
+        }
         public ActionResult Index()
         {
             return View();

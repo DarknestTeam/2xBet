@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.BLL.Services
 {
-    class CardService:ICardService
+     public class CardService:ICardService
     {
         IUnitOfWork db;
 

@@ -19,6 +19,7 @@ namespace _2xBet.BLL.Services
         ICardService card { get; set; }
         public UserService(IUnitOfWork uow,ICardService card)
         {
+
             Db = uow;
             this.card = card;
 

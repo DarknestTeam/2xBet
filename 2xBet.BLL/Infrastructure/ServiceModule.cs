@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace _2xBet.BLL.Infrastructure
 {
-    class ServiceModule:NinjectModule
+     public class ServiceModule:NinjectModule
     {
         public string connectionString;
         public ServiceModule(string connection)

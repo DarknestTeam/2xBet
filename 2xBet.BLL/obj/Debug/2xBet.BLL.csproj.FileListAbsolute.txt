@@ -1,5 +1,3 @@
-C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\obj\Debug\2xBet.BLL.csprojResolveAssemblyReference.cache
-C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\obj\Debug\2xBet.BLL.csproj.CoreCompileInputs.cache
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\2xBet.BLL.dll
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\2xBet.BLL.pdb
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\2xBet.DAL.dll
@@ -14,5 +12,7 @@ C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\AutoMapper.xm
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\Ninject.xml
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\System.ValueTuple.xml
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\bin\Debug\EntityFramework.xml
+C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\obj\Debug\2xBet.BLL.csprojResolveAssemblyReference.cache
+C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\obj\Debug\2xBet.BLL.csproj.CoreCompileInputs.cache
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\obj\Debug\2xBet.BLL.dll
 C:\Users\андрейКов\Source\Repos\2xBet\2xBet.BLL\obj\Debug\2xBet.BLL.pdb
