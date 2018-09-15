@@ -23,9 +23,14 @@ namespace _2xBet.WEB
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+                "~/Scripts/Script.js"
+                ));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css","~/Content/Style.css"));
+            
+            
         }
     }
 }
