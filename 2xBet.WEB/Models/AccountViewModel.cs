@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-
 namespace _2xBet.WEB.Models
 {
     public class RegisterViewModel

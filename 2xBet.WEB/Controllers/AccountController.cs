@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 namespace _2xBet.WEB.Controllers
 {
     public class AccountController : Controller
@@ -30,11 +29,11 @@ namespace _2xBet.WEB.Controllers
         public ActionResult Login(LoginViewModel model)
         {
             var userDTO = new UserDTO { User_Id = model.User_Id, Login = model.Login, Password = model.Password };
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return PartialView(model);
             }
-            
+
             return PartialView(model);
         }
         [AllowAnonymous]
@@ -52,7 +51,8 @@ namespace _2xBet.WEB.Controllers
                 var userDTO = new UserDTO { User_Id = model.User_Id, Email = model.Email, Login = model.Login, Password = model.Password };
                 userservice.MakeUser(userDTO);
                 return Content("<h2>Регистрация прошла успешно</h2>");
-            } catch (ValidationException ex)
+            }
+            catch (ValidationException ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
